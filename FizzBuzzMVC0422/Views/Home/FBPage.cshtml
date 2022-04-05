@@ -1,0 +1,50 @@
+﻿
+
+<div class="container col-xxl-8 px-4 py-5  mt-5">
+    <div class="row row-cols-1  row-cols-lg-2 ">
+        <!--left column instructions-->
+        <div class="col col-lg-4 order order-md-first border-end border-3">
+            <h1 class="logoFont">FIZZ BUZZ MVC</h1>
+            <h2>A Coding Project</h2>
+            <h4 class="lead">
+                As the quintessential Interview question, this coding exercise
+                loops through and displays numbers 1 to 100. Numbers divisible by
+                user input, <strong>"Fizz" </strong>are replaced by the word,<span class="logoFont Fizz">
+                    "Fizz"
+                </span>. Numbers divisible by user input,<strong>"Buzz" </strong> are
+                replaced by the word, <span class="logoFont Buzz">"Buzz"</span>.
+                When a number is divisible by both <strong>"Fizz" </strong> AND
+                <strong>"Buzz" </strong> it is replaced by the word,
+                <span class="logoFont FizzBuzz">"FizzBuzz"</span>.
+            </h4>
+
+            <h2 class="mt-5 border-bottom border-3">Instructions</h2>
+            <p>
+                Enter a <strong>"Fizz" </strong> value and <strong>"buzz" </strong> value. Press the button. See your
+                results!
+            </p>
+        </div>
+        <div class="col col-lg-8 order order-md-last">
+            <div>
+                <h5>Enter Numbers</h5>
+                @*Form goes here*@
+                <form asp-controller="Home" asp-action="FBPage" method="post">
+                    <div class="form-group">
+                        <label asp-for="FizzValue">Fizz Value</label>
+                        <input type="number" asp-for="FizzValue" class="form-control" placeholder="Enter Fizz" value="@Model.FizzValue" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="BuzzValue">Buzz Value</label>
+                        <input type="number" asp-for="BuzzValue" class="form-control" placeholder="Enter Fizz" value="@Model.BuzzValue" />
+                    </div>
+                    <button type="submit" class="btn btn-dark">Submit</button>
+                </form>
+                <h2 class="mt-5 border-bottom border-3">Results</h2>
+                <div class="table-responsive">
+                    @*Table goes here*@
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
